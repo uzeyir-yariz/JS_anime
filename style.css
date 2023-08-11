@@ -1,0 +1,127 @@
+body{
+    scroll-behavior: smooth;
+}
+
+/* Reset CSS */
+body, h1, h2, h3, p, figure, div, article {
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 500ms steps(32) forwards;
+}
+
+body {
+    background: #000;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    font-size: 72px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-section {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 20px;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s, opacity 0.5s;
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.text-content {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.text-content h3 {
+    color: orange;
+    font-size: 24px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 4s steps(32) forwards;
+}
+
+.text-content p {
+    font-size: 14px;
+    line-height: 1.5;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 500ms steps(32) forwards;
+}
+
+.picture-content {
+    background-color: white;
+    height: 150px;
+    width: 40%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+.picture-left {
+    background-image: url("left-image.jpg");
+}
+
+.picture-right {
+    background-image: url("right-image.jpg");
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .picture-content {
+        width: 100%;
+        height: 200px;
+        margin-top: 10px;
+    }
+}
+
+@keyframes typing {
+    0% {
+        width: 0;
+    }
+    25% {
+        width: 25%; 
+    }
+    50% {
+        width: 50%;
+    }
+    75%{
+        width: 75%;
+    }
+    100%{
+        width: 100%;
+    }
+}
